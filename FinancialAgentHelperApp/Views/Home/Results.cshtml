@@ -1,0 +1,98 @@
+@model FinancialAgentHelperApp.Models.FinancialPlan
+@{
+    ViewData["Title"] = "Financial Plan Results";
+}
+<div class="container">
+    <h1>Financial Plan for @Model.ApplicantName</h1>
+    <h2>First @Model.PayMonthlyForYears Years</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Policy Year</th>
+                <th>Age</th>
+                <th>Annual Payment</th>
+                <th>Annual Insurance Cost</th>
+                <th>Amount Invested</th>
+                <th>Growth</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var year in Model.FirstPeriod)
+            {
+                <tr>
+                    <td>@year.PolicyYear</td>
+                    <td>@year.Age</td>
+                    <td>@year.AnnualPayment.ToString("N2")</td>
+                    <td>@year.AnnualInsuranceCost.ToString("N2")</td>
+                    <td>@year.AmountInvested.ToString("N2")</td>
+                    <td>@year.Growth.ToString("N2")</td>
+                    <td>@year.TotalValue.ToString("N2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><strong>Total Premium Paid: @Model.TotalPremiumPaid.ToString("N2")</strong></p>
+
+    <h2>Next 10 Years</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Policy Year</th>
+                <th>Age</th>
+                <th>Annual Payment</th>
+                <th>Annual Insurance Cost</th>
+                <th>Amount Invested</th>
+                <th>Growth</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var year in Model.SecondPeriod)
+            {
+                <tr>
+                    <td>@year.PolicyYear</td>
+                    <td>@year.Age</td>
+                    <td>@year.AnnualPayment.ToString("N2")</td>
+                    <td>@year.AnnualInsuranceCost.ToString("N2")</td>
+                    <td>@year.AmountInvested.ToString("N2")</td>
+                    <td>@year.Growth.ToString("N2")</td>
+                    <td>@year.TotalValue.ToString("N2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><strong>Total Premium Paid: 0.00</strong></p>
+
+    <h2>Remaining Years (up to Age 100)</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Policy Year</th>
+                <th>Age</th>
+                <th>Annual Payment</th>
+                <th>Annual Insurance Cost</th>
+                <th>Amount Invested</th>
+                <th>Growth</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var year in Model.ThirdPeriod)
+            {
+                <tr>
+                    <td>@year.PolicyYear</td>
+                    <td>@year.Age</td>
+                    <td>@year.AnnualPayment.ToString("N2")</td>
+                    <td>@year.AnnualInsuranceCost.ToString("N2")</td>
+                    <td>@year.AmountInvested.ToString("N2")</td>
+                    <td>@year.Growth.ToString("N2")</td>
+                    <td>@year.TotalValue.ToString("N2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><strong>Total Premium Paid: 0.00</strong></p>
+
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</div>

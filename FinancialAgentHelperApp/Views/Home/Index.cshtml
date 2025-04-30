@@ -1,0 +1,81 @@
+﻿@model FinancialAgentHelperApp.Models.FinancialPlan
+@{
+    ViewData["Title"] = "Financial Agent Helper";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Financial Agent Helper Tool</h1>
+        @if (ViewData["ValidationErrors"] != null)
+        {
+            <div class="alert alert-danger">
+                <p>Form submission failed due to the following errors:</p>
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+        <form asp-controller="Home" asp-action="Results" method="post">
+            <div class="form-group">
+                <label asp-for="ApplicantName">Applicant's Name</label>
+                <input asp-for="ApplicantName" class="form-control" />
+                <span asp-validation-for="ApplicantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age">Age</label>
+                <input asp-for="Age" class="form-control" type="number" min="18" max="100" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LifeInsuranceCoverage">Life Insurance Coverage ($)</label>
+                <input asp-for="LifeInsuranceCoverage" class="form-control" type="number" step="0.01" min="10000"
+                    max="10000000" />
+                <span asp-validation-for="LifeInsuranceCoverage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalMonthlyPremium">Total Monthly Premium ($)</label>
+                <input asp-for="TotalMonthlyPremium" class="form-control" type="number" step="0.01" min="0"
+                    max="10000" />
+                <span asp-validation-for="TotalMonthlyPremium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalMonthlyInvestment">Total Monthly Investment ($)</label>
+                <input asp-for="TotalMonthlyInvestment" class="form-control" type="number" step="0.01" min="0"
+                    max="10000" />
+                <span asp-validation-for="TotalMonthlyInvestment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PayMonthlyForYears">Pay Monthly For (Years)</label>
+                <input asp-for="PayMonthlyForYears" class="form-control" type="number" min="1" max="50" />
+                <span asp-validation-for="PayMonthlyForYears" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RateOfInterest">Rate of Interest (%)</label>
+                <input asp-for="RateOfInterest" class="form-control" type="number" step="0.01" min="0" max="20" />
+                <span asp-validation-for="RateOfInterest" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation/1.19.5/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

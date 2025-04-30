@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/FinancialAgentHelperApp.props" />
+</Project>
