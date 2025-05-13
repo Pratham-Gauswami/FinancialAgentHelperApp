@@ -433,3 +433,10 @@
 /Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/obj/Debug/net9.0/FinancialAgentHelperApp.pdb
 /Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/obj/Debug/net9.0/FinancialAgentHelperApp.genruntimeconfig.cache
 /Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/obj/Debug/net9.0/ref/FinancialAgentHelperApp.dll
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/web.config
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/appsettings.Development.json
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/appsettings.json
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/FinancialAgentHelperApp.deps.json
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/FinancialAgentHelperApp.runtimeconfig.json
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/bin/Debug/net9.0/publish/FinancialAgentHelperApp.staticwebassets.endpoints.json
+/Users/prathamgauswami/Desktop/SIDE PROJECTS/FinancialAgentHelperTool/fincial-agent-helper1/FinancialAgentHelperApp/obj/Debug/net9.0/FinancialAgentHelperApp.sourcelink.json

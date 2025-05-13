@@ -1,0 +1,56 @@
+Steps to Publish Changes
+Make Changes to Your Code:
+Edit the necessary files in your project (e.g., HomeController.cs, Index.cshtml, Results.cshtml, or any other files in FinancialAgentHelperApp).
+Test the changes locally to ensure they work:
+text
+
+Copy
+cd FinancialAgentHelperApp
+dotnet run
+Access http://localhost:5000 in your browser to verify the changes.
+
+Republish the Updated App:
+After confirming the changes work locally, publish the updated app to generate new deployment files:
+text
+
+Copy
+dotnet publish -c Release -o ./publish
+This overwrites the existing publish folder with the updated files, including the modified FinancialAgentHelperApp.dll, views, and static assets.
+
+Create a New ZIP File:
+Package the updated publish folder into a new ZIP file:
+text
+
+Copy
+cd publish
+zip -r ../FinancialAgentHelperApp.zip .
+This overwrites the previous FinancialAgentHelperApp.zip with the updated files.
+
+Redeploy to Azure:
+Use the same ZIP deployment command to upload the updated ZIP file to Azure:
+text
+
+Copy
+az webapp deployment source config-zip --resource-group MyResourceGroupWestUS2 --name FinancialAgentHelperApp-Pratham2025 --src ../FinancialAgentHelperApp.zip
+Adjust --resource-group and --name to match your setup (e.g., MyResourceGroupWestUS2 and the unique Web App name you used, like FinancialAgentHelperApp-Pratham2025).
+Azure will extract the new ZIP file, overwrite the existing app files, and restart the Web App to apply the changes.
+Test the Updated App:
+Access your app at the same URL (e.g., https://FinancialAgentHelperApp-Pratham2025.azurewebsites.net).
+Verify that your changes are live by testing the app (e.g., submit the form and check the updated behavior or UI).
+
+Additional Notes
+No Need to Recreate the Web App:
+You don’t need to recreate the App Service Plan or Web App. The az webapp deployment source config-zip command updates the existing Web App with your new files.
+Downtime:
+The redeployment process involves a brief restart of the Web App, which may cause a few seconds of downtime. For a demo app, this is usually fine.
+Logs for Troubleshooting:
+If the updated app doesn’t work as expected, check the logs:
+text
+
+Copy
+az webapp log tail --resource-group MyResourceGroupWestUS2 --name FinancialAgentHelperApp-Pratham2025
+Recommendation
+Follow the steps above to publish your changes: update your code, republish, recreate the ZIP file, and redeploy. Test the app after deployment to ensure your changes are live. This process can be repeated each time you make updates.
+
+//WORKING LINK//
+https://FinancialAgentHelperApp-Pratham2025.azurewebsites.net
